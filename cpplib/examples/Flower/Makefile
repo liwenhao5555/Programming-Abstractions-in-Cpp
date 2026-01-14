@@ -5,8 +5,8 @@ PROGRAM = Flower
 OBJECTS = Flower.o
 
 ROOTPATH = ../..
-CPPOPTIONS = -I$(ROOTPATH)/include -fvisibility-inlines-hidden
-LDOPTIONS = -L$(ROOTPATH)/lib -static-libstdc++
+CPPOPTIONS = -I$(ROOTPATH)/include -arch arm64 -fvisibility-inlines-hidden
+LDOPTIONS = -L$(ROOTPATH)/lib -arch arm64 -static-libstdc++
 LIB = -lStanfordCPPLib
 
 # ***************************************************************

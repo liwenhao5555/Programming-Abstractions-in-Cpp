@@ -4,7 +4,7 @@
 PROGRAMS = \
     FractionSum
 
-ARCH = i386
+ARCH = arm64
 CPPOPTIONS = -IStanfordCPPLib -arch $(ARCH) -fvisibility-inlines-hidden
 LDOPTIONS = -LStanfordCPPLib -arch $(ARCH)
 LIB = -lStanfordCPPLib

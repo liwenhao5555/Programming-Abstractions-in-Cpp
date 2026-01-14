@@ -5,8 +5,8 @@ PROGRAM = USFlag
 OBJECTS = USFlag.o gstar.o
 
 ROOTPATH = ../..
-CPPOPTIONS = -I$(ROOTPATH)/include -fvisibility-inlines-hidden
-LDOPTIONS = -L$(ROOTPATH)/lib -static-libstdc++
+CPPOPTIONS = -I$(ROOTPATH)/include -arch arm64 -fvisibility-inlines-hidden
+LDOPTIONS = -L$(ROOTPATH)/lib -arch arm64 -static-libstdc++
 LIB = -lStanfordCPPLib
 
 # ***************************************************************
@@ -21,11 +21,11 @@ spl.jar:
 USFlag: $(OBJECTS)
 	g++ -o $(PROGRAM) $(LDOPTIONS) $(OBJECTS) $(LIB)
 
-USFlag.o: USFlag.cpp gstar.h Makefile StanfordCPPLib/libStanfordCPPLib.a \
+USFlag.o: USFlag.cpp gstar.h Makefile \
          
 	g++ -c $(CPPOPTIONS) USFlag.cpp
 
-gstar.o: gstar.cpp gstar.h Makefile StanfordCPPLib/libStanfordCPPLib.a
+gstar.o: gstar.cpp gstar.h Makefile
 	g++ -c $(CPPOPTIONS) gstar.cpp
 
 

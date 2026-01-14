@@ -5,8 +5,8 @@ PROGRAM = DrawLines
 OBJECTS = DrawLines.o
 
 ROOTPATH = ../..
-CPPOPTIONS = -I$(ROOTPATH)/include -fvisibility-inlines-hidden
-LDOPTIONS = -L$(ROOTPATH)/lib -static-libstdc++
+CPPOPTIONS = -I$(ROOTPATH)/include -arch arm64 -fvisibility-inlines-hidden
+LDOPTIONS = -L$(ROOTPATH)/lib -arch arm64 -static-libstdc++
 LIB = -lStanfordCPPLib
 
 # ***************************************************************
@@ -21,7 +21,7 @@ spl.jar:
 DrawLines: $(OBJECTS)
 	g++ -o $(PROGRAM) $(LDOPTIONS) $(OBJECTS) $(LIB)
 
-DrawLines.o: DrawLines.cpp Makefile StanfordCPPLib/libStanfordCPPLib.a
+DrawLines.o: DrawLines.cpp Makefile
 	g++ -c $(CPPOPTIONS) DrawLines.cpp
 
 

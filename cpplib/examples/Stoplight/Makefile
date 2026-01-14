@@ -5,8 +5,8 @@ PROGRAM = Stoplight
 OBJECTS = Stoplight.o gstoplight.o
 
 ROOTPATH = ../..
-CPPOPTIONS = -I$(ROOTPATH)/include -fvisibility-inlines-hidden
-LDOPTIONS = -L$(ROOTPATH)/lib -static-libstdc++
+CPPOPTIONS = -I$(ROOTPATH)/include -arch arm64 -fvisibility-inlines-hidden
+LDOPTIONS = -L$(ROOTPATH)/lib -arch arm64 -static-libstdc++
 LIB = -lStanfordCPPLib
 
 # ***************************************************************
@@ -22,11 +22,11 @@ Stoplight: $(OBJECTS)
 	g++ -o $(PROGRAM) $(LDOPTIONS) $(OBJECTS) $(LIB)
 
 Stoplight.o: Stoplight.cpp gstoplight.h Makefile \
-             StanfordCPPLib/libStanfordCPPLib.a
+            
 	g++ -c $(CPPOPTIONS) Stoplight.cpp
 
 gstoplight.o: gstoplight.cpp gstoplight.h Makefile \
-              StanfordCPPLib/libStanfordCPPLib.a
+             
 	g++ -c $(CPPOPTIONS) gstoplight.cpp
 
 

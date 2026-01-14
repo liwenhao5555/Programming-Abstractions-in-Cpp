@@ -5,8 +5,8 @@ PROGRAM = PacMan
 OBJECTS = PacMan.o
 
 ROOTPATH = ../..
-CPPOPTIONS = -I$(ROOTPATH)/include -fvisibility-inlines-hidden
-LDOPTIONS = -L$(ROOTPATH)/lib -static-libstdc++
+CPPOPTIONS = -I$(ROOTPATH)/include -arch arm64 -fvisibility-inlines-hidden
+LDOPTIONS = -L$(ROOTPATH)/lib -arch arm64 -static-libstdc++
 LIB = -lStanfordCPPLib
 
 # ***************************************************************
@@ -21,7 +21,7 @@ spl.jar:
 PacMan: $(OBJECTS)
 	g++ -o $(PROGRAM) $(LDOPTIONS) $(OBJECTS) $(LIB)
 
-PacMan.o: PacMan.cpp Makefile StanfordCPPLib/libStanfordCPPLib.a
+PacMan.o: PacMan.cpp Makefile
 	g++ -c $(CPPOPTIONS) PacMan.cpp
 
 

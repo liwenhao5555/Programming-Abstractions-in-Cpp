@@ -5,8 +5,8 @@ PROGRAM = DrawRectangles
 OBJECTS = DrawRectangles.o
 
 ROOTPATH = ../..
-CPPOPTIONS = -I$(ROOTPATH)/include -fvisibility-inlines-hidden
-LDOPTIONS = -L$(ROOTPATH)/lib -static-libstdc++
+CPPOPTIONS = -I$(ROOTPATH)/include -arch arm64 -fvisibility-inlines-hidden
+LDOPTIONS = -L$(ROOTPATH)/lib -arch arm64 -static-libstdc++
 LIB = -lStanfordCPPLib
 
 # ***************************************************************
@@ -21,7 +21,7 @@ spl.jar:
 DrawRectangles: $(OBJECTS)
 	g++ -o $(PROGRAM) $(LDOPTIONS) $(OBJECTS) $(LIB)
 
-DrawRectangles.o: DrawRectangles.cpp Makefile StanfordCPPLib/libStanfordCPPLib.a
+DrawRectangles.o: DrawRectangles.cpp Makefile
 	g++ -c $(CPPOPTIONS) DrawRectangles.cpp
 
 

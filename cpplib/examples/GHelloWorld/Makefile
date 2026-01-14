@@ -5,8 +5,8 @@ PROGRAM = GHelloWorld
 OBJECTS = GHelloWorld.o
 
 ROOTPATH = ../..
-CPPOPTIONS = -I$(ROOTPATH)/include -fvisibility-inlines-hidden
-LDOPTIONS = -L$(ROOTPATH)/lib -static-libstdc++
+CPPOPTIONS = -I$(ROOTPATH)/include -arch arm64 -fvisibility-inlines-hidden
+LDOPTIONS = -L$(ROOTPATH)/lib -arch arm64 -static-libstdc++
 LIB = -lStanfordCPPLib
 
 # ***************************************************************
@@ -21,7 +21,7 @@ spl.jar:
 GHelloWorld: $(OBJECTS)
 	g++ -o $(PROGRAM) $(LDOPTIONS) $(OBJECTS) $(LIB)
 
-GHelloWorld.o: GHelloWorld.cpp Makefile StanfordCPPLib/libStanfordCPPLib.a
+GHelloWorld.o: GHelloWorld.cpp Makefile
 	g++ -c $(CPPOPTIONS) GHelloWorld.cpp
 
 
