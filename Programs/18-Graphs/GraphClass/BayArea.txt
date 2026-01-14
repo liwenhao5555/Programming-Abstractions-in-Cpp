@@ -1,0 +1,26 @@
+node "Berkeley"
+node "Fremont"
+node "Hayward"
+node "Oakland"
+node "Palo Alto"
+node "San Francisco"
+node "San Jose"
+node "San Rafael"
+node "Sunnyvale"
+node "Vallejo"
+connect "San Rafael" "Vallejo" 28
+connect "San Rafael" "Berkeley" 30
+connect "San Francisco" "San Rafael" 19
+connect "Berkeley" "Vallejo" 22
+connect "Oakland" "Berkeley" 10
+connect "San Francisco" "Oakland" 19
+connect "San Francisco" "Palo Alto" 19
+connect "Oakland" "Hayward" 10
+connect "Hayward" "Fremont" 10
+connect "Palo Alto" "Fremont" 21
+connect "Palo Alto" "Sunnyvale" 15
+connect "Sunnyvale" "Fremont" 13
+connect "Sunnyvale" "San Jose" 11
+connect "Fremont" "San Jose" 11
+kruskal trace
+quit
