@@ -23,8 +23,10 @@
 /*************************************************************************/
 
 #include <cctype>
+#include <cstdlib>
 #include <iomanip>
 #include <iostream>
+#include <locale>
 #include <sstream>
 #include "error.h"
 #include "strlib.h"
@@ -61,10 +63,16 @@ string realToString(double d) {
 }
 
 double stringToReal(string str) {
-   istringstream stream(str);
-   double value;
-   stream >> value >> ws;
-   if (stream.fail() || !stream.eof()) {
+   const char *start = str.c_str();
+   char *end = nullptr;
+   double value = strtod(start, &end);
+   if (start == end) {
+      error("stringToReal: Illegal floating-point format (" + str + ")");
+   }
+   while (*end != '\0' && isspace(static_cast<unsigned char>(*end))) {
+      ++end;
+   }
+   if (*end != '\0') {
       error("stringToReal: Illegal floating-point format (" + str + ")");
    }
    return value;

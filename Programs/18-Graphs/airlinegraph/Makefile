@@ -6,7 +6,7 @@ PROGRAMS = \
     AirlineDFS \
     AirlineGraph
 
-ARCH = arm64
+ARCH ?= $(shell uname -m)
 CPPOPTIONS = -IStanfordCPPLib -arch $(ARCH) -fvisibility-inlines-hidden
 LDOPTIONS = -LStanfordCPPLib -arch $(ARCH)
 LIB = -lStanfordCPPLib

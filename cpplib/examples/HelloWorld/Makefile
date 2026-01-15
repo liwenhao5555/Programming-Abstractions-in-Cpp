@@ -5,8 +5,8 @@ PROGRAM = HelloWorld
 OBJECTS = HelloWorld.o
 
 ROOTPATH = ../..
-CPPOPTIONS = -I$(ROOTPATH)/include -arch arm64 -fvisibility-inlines-hidden
-LDOPTIONS = -L$(ROOTPATH)/lib -arch arm64 -static-libstdc++
+CPPOPTIONS = -I$(ROOTPATH)/include -arch $(shell uname -m) -fvisibility-inlines-hidden
+LDOPTIONS = -L$(ROOTPATH)/lib -arch $(shell uname -m)
 LIB = -lStanfordCPPLib
 
 # ***************************************************************

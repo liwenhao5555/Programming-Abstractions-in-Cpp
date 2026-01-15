@@ -55,8 +55,9 @@ TESTOBJECTS = \
     obj/TestVectorClass.o \
     obj/unittest.o
 
-CPPOPTIONS = -Iinclude -arch arm64 -fvisibility-inlines-hidden
-LDOPTIONS = -static-libstdc++ -arch arm64
+ARCH ?= $(shell uname -m)
+CPPOPTIONS = -Iinclude -arch $(ARCH) -fvisibility-inlines-hidden
+LDOPTIONS = -static-libstdc++ -arch $(ARCH)
 
 
 # ***************************************************************
