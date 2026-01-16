@@ -15,14 +15,11 @@ LIB = -lStanfordCPPLib
 
 all: $(PROGRAMS)
 
-DirectionTest: DirectionTest.o direction.o
-	g++ $(LDOPTIONS) -o DirectionTest DirectionTest.o direction.o $(LIB)
+DirectionTest: DirectionTest.o
+	g++ $(LDOPTIONS) -o DirectionTest DirectionTest.o $(LIB)
 
-DirectionTest.o: DirectionTest.cpp direction.h
+DirectionTest.o: DirectionTest.cpp
 	g++ $(CPPOPTIONS) -c DirectionTest.cpp
-
-direction.o: direction.cpp direction.h
-	g++ $(CPPOPTIONS) -c direction.cpp
 
 
 # ***************************************************************
