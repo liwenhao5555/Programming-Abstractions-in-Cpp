@@ -1,0 +1,33 @@
+node Hobbiton
+node Southfarthing
+node Bree
+node Rivendell
+node Moria
+node Caradhras
+node Isengard
+node Lorien
+node Edoras
+node Rauros
+node MinasTirith
+node BlackGate
+node CirithUngol
+node MountDoom
+connect Hobbiton       Southfarthing   1
+connect Bree           Hobbiton       10
+connect Isengard       Southfarthing  50
+connect Bree           Rivendell      30
+connect Edoras         Isengard       50
+connect Moria          Rivendell      10
+connect Caradhras      Rivendell      30
+connect Lorien         Moria          40
+connect Caradhras      Lorien         30
+connect Edoras         Lorien         10
+connect Lorien         Rauros          5
+connect Edoras         Rauros         10
+connect Edoras         MinasTirith    15
+connect BlackGate      Rauros         20
+connect MinasTirith    Rauros         15
+connect CirithUngol    MinasTirith    30
+connect BlackGate      CirithUngol    20
+connect BlackGate      MountDoom      70
+connect CirithUngol    MountDoom      40

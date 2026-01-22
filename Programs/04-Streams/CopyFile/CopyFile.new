@@ -1,0 +1,29 @@
+/*
+ * File: CopyFile.cpp
+ * ------------------
+ * This program creates a copy of an input file.
+ */
+
+using namespace std;
+#include <iostream>
+#include <fstream>
+#include "simpio.h"
+
+/* Function prototypes */
+
+void copyStream(istream & is, ostream & os);
+
+/* Main program */
+
+int main() {
+   ifstream infile;
+   ofstream outfile;
+   getInputFile(infile, "Input file:  ");
+   getOutputFile(outfile, "Output file: ");
+   copyStream(infile, outfile);
+   infile.close();
+   outfile.close();
+   return 0;
+}
+
+# include "copyStream"

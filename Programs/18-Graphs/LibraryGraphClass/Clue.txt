@@ -1,0 +1,29 @@
+node BallRoom
+node BilliardRoom
+node Conservatory
+node DiningRoom
+node Hall
+node Kitchen
+node Library
+node Lounge
+node Study
+connect BallRoom     BilliardRoom   7
+connect BallRoom     Conservatory   4
+connect BallRoom     DiningRoom     7
+connect BallRoom     Kitchen        7
+connect BilliardRoom Conservatory   7
+connect BilliardRoom Library        4
+connect Conservatory Lounge         3
+connect DiningRoom   Hall           8
+connect DiningRoom   Kitchen       11
+connect DiningRoom   Lounge         4
+connect Hall         Library        7
+connect Hall         Lounge         8
+connect Hall         Study          4
+connect Kitchen      Study          3
+connect Library      Study          7
+dfs Lounge
+bfs Kitchen
+pathExists Lounge Kitchen
+node Cellar
+pathExists Lounge Cellar
